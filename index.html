@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width"/>
+	<title>Kickstarter Essen Spiel Hall 2</title>
+	<link rel="stylesheet" href="styles.css"> <!-- Conexión con el archivo CSS -->
+	<style>
+		.tooltip {
+			border:2px solid #f7eed7;
+			border-radius:4px;
+			padding:10px;
+			margin-bottom:10px;
+			margin-left:0px;
+			background-color:#f7eed7;
+			font:12px Verdana;
+			line-height:18px;
+			box-shadow: 0px 3px 10px grey;
+		}
+			a {
+				cursor:pointer;
+				color:blue;
+				text-align: center
+			}
+			a:hover {
+				color:black;
+			}
+			label {
+				display:inline-block;
+				width:250px;
+				text-align:right;
+				padding:5px;
+			}
+			a:link {
+				color:blue;
+				text-decoration: underline;
+			}
+	</style>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.imagemapster.min.js"></script>
+	<script type="text/javascript">
+				$(document).ready(function() {
+				$('img').mapster({
+				fillOpacity: 0.5,
+				render_highlight: {
+					fillColor: 'f7eed7',
+					stroke: true,
+					strokeColor: 'f7eed7'
+				},
+				clickNavigate: true,
+				fadeInterval: 50,
+				showToolTip: true,
+				onClick: function (e) {
+					$('#coordinateslabel').hide();
+					$('#deletelabel').show();
+					var thisId = e.key;
+					thisId = thisId.replace('game-', '');
+					$('#existing').val(thisId);
+					console.log($('#existing').val());
+					$('#game').val(thisId);
+					$('#description').val($('#hd'+thisId).val());
+				},
+				toolTipContainer: '<div class="tooltip" style="text-align:left;max-width:200px;"></div>',
+				mapKey: 'data-key' });
+				});
+		var width = 3346;
+		var height = 1829;
+		var multiplier = 2;
+		function smaller(){
+			width = width/2;
+			height = height/2;
+			multiplier = multiplier*2;
+			$('#zoom').val(multiplier);
+			$('#container').animate({
+				width:width
+			}, 500, function() {});
+			$('img').mapster('resize',width,height,500);
+		}
+		function bigger(){
+			width = width*2;
+			height = height*2;
+			multiplier = multiplier/2;
+			$('#zoom').val(multiplier);
+			$('#container').animate({
+				width:width
+			}, 500, function() {});
+			$('img').mapster('resize',width,height,500);
+		}
+		
+	</script>
+	</head>
+	<body style="text-align:center;background-color:#eff0f2;font:12px Verdana;">
+		
+		<div id="container" style="max-width:100%; height:auto; margin:15px auto 15px auto;">
+		<!-- Pop-up -->
+    		<div id="overlay" onclick="ocultarPopup()"></div>
+    		<div id="popup">
+        		<span id="popup-texto"></span>
+    		</div>		
+		<script src="scripts.js"></script>
+			
+			<p style="font-size:20px;"></p>
+			<div id="container" style="max-width:100%; height:auto; margin:15px auto 15px auto;">
+				<img id="picture" src="Hall 2.png" id="picture" width="3346" style="border:1px solid blue;" usemap="#map"/>
+				<map name="map" id="map">	
+          <area alt="Singa Games UK" title="Singa Games UK" href="https://www.kickstarter.com/profile/singagamesuk/created" coords="1228,463,1453,520" shape="rect">
+          <area alt="Eurydice Games" title="Eurydice Games" href="https://www.kickstarter.com/profile/eurydice-games/created" coords="1540,441,1615,512" shape="rect">
+          <area alt="Big Punch Studios" title="Big Punch Studios" href="https://www.kickstarter.com/profile/bigpunchstudios/created" coords="2052,437,2131,512" shape="rect">
+          <area alt="Terror Toad" title="Terror Toad" href="https://www.kickstarter.com/profile/griminc/created" coords="3137,267,3189,346" shape="rect">
+          <area alt="Mammoth miniatures" title="Mammoth miniatures" href="https://www.kickstarter.com/profile/1851620522/created" coords="3080,354,3129,429" shape="rect">
+          <area alt="Onebold Studio" title="Onebold Studio" href="https://www.kickstarter.com/profile/fate-of-witches-game/created" coords="3137,350,3186,433" shape="rect">
+          <area alt="No Rolls Barred" title="No Rolls Barred" href="https://www.kickstarter.com/profile/norollsbarred/created" coords="3076,441,3186,512" shape="rect">
+          <area alt="Wise Box" title="Wise Box" href="https://www.kickstarter.com/profile/wisebox/created" coords="1069,610,1122,738" shape="rect">
+          <area alt="Questiny Board Game" title="Questiny Board Game" href="https://www.kickstarter.com/profile/questinyboardgame/created" coords="1017,862,1062,941" shape="rect">
+          <area alt="AK Faulkner" title="AK Faulkner" href="https://www.kickstarter.com/profile/akfaulkner/created" coords="1017,949,1062,1028" shape="rect">
+          <area alt="Emily Parnell" title="Emily Parnell" href="https://www.kickstarter.com/profile/263252784/created" coords="1077,949,1122,1028" shape="rect">
+          <area alt="LootQuest" title="LootQuest" href="https://www.kickstarter.com/profile/lootquest/created" coords="847,1235,892,1314" shape="rect">
+          <area alt="History Mysteries" title="History Mysteries" href="https://www.kickstarter.com/profile/historymysteries/created" coords="1231,606,1303,715" shape="rect">
+          <area alt="Guntower Games" title="Guntower Games" href="https://www.kickstarter.com/profile/guntowergames/created" coords="1228,1058,1303,1137" shape="rect">
+          <area alt="Dice Heads" title="Dice Heads" href="https://www.kickstarter.com/profile/diceheads/created" coords="2399,606,2478,659" shape="rect">
+          <area alt="Minor Disaster Games" title="Minor Disaster Games" href="https://www.kickstarter.com/profile/kristiansbrain/created" coords="2481,606,2621,655" shape="rect">
+          <area alt="Exploding Kittens" title="Exploding Kittens" href="https://www.kickstarter.com/profile/elanlee/created" coords="2399,663,2621,715" shape="rect">
+          <area alt="Vesuvius Media" title="Vesuvius Media" href="https://www.kickstarter.com/profile/vesuviusmedia/created" coords="2711,806,2843,911" shape="rect">
+          <area alt="Bubblegum Stuff" title="Bubblegum Stuff" href="https://www.kickstarter.com/profile/bubblegumstuff/created" coords="2715,1002,2930,1133" shape="rect">
+          <area alt="Royal Stag Press" title="Royal Stag Press" href="https://www.kickstarter.com/profile/royalstagpress/created" coords="3080,749,3125,825" shape="rect">
+          <area alt="Willow Woods" title="Willow Woods" href="https://www.kickstarter.com/profile/willow-woods" coords="3080,919,3129,998" shape="rect">
+          <area alt="Button Kin Games" title="Button Kin Games" href="https://www.kickstarter.com/profile/buttonkin/created" coords="3137,919,3186,1002" shape="rect">
+          <area alt="Red Herring Games" title="Red Herring Games" href="https://www.kickstarter.com/profile/redherringgames/created" coords="3080,1009,3129,1081" shape="rect">
+          <area alt="Team Custard Kraken" title="Team Custard Kraken" href="https://www.kickstarter.com/profile/teamcustardkraken/created" coords="3291,1228,3336,1303" shape="rect">
+          <area alt="Ralph Horsley" title="Ralph Horsley" href="https://www.kickstarter.com/profile/ralphhorsley/created" coords="1017,1431,1062,1536" shape="rect">
+          <area alt="BOARD AND DICE" title="BOARD AND DICE" href="https://www.kickstarter.com/profile/boardanddice/created" coords="1337,1341,1442,1533" shape="rect">
+          <area alt="Gibsons Games" title="Gibsons Games" href="https://www.kickstarter.com/profile/kingmaker-rerelease/created" coords="1544,1457,1755,1529" shape="rect">
+          <area alt="Zatu Games" title="Zatu Games" href="https://www.kickstarter.com/profile/zatu-games/created" coords="1962,1258,2293,1536" shape="rect">
+          <area alt="Lucky Duck Games" title="Lucky Duck Games" href="https://www.kickstarter.com/profile/lucky-duck-games/created" coords="2715,1261,2986,1393" shape="rect">
+          <area alt="Limithron" title="Limithron" href="https://www.kickstarter.com/profile/limithron/created" coords="3080,1371,3133,1450" shape="rect">
+          <area alt="Charlotte Clark" title="Charlotte Clark" href="https://www.kickstarter.com/profile/blazeginnifer/created" coords="847,1796,892,1875" shape="rect">
+          <area alt="Sneaky Rascal Games" title="Sneaky Rascal Games" href="https://www.kickstarter.com/profile/sneakyrascalgames/created" coords="847,1962,892,2045" shape="rect">
+          <area alt="Modular Worlds" title="Modular Worlds" href="https://www.kickstarter.com/profile/modularworlds/created" coords="1073,1770,1118,1958" shape="rect">
+          <area alt="Smugcomputer Illustration" title="Smugcomputer Illustration" href="https://www.kickstarter.com/profile/smugcomputer/created" coords="1017,1883,1062,1958" shape="rect">
+          <area alt="The Wonder Burrow" title="The Wonder Burrow" href="https://www.kickstarter.com/profile/1019364533/created" coords="1017,1966,1062,2045" shape="rect">
+          <area alt="Cation Arts" title="Cation Arts" href="https://www.kickstarter.com/profile/alltimewrestling/created" coords="1073,1966,1118,2041" shape="rect">
+          <area alt="Crooked Dice Game Design Studio" title="Crooked Dice Game Design Studio" href="https://www.kickstarter.com/profile/crooked-dice/created" coords="1013,2052,1118,2214" shape="rect">
+          <area alt="SoulMuppet Publishing" title="SoulMuppet Publishing" href="https://www.kickstarter.com/profile/soulmuppet/created" coords="1284,1653,1453,1789" shape="rect">
+          <area alt="Oink Games" title="Oink Games" href="https://www.kickstarter.com/profile/oinkgames/created" coords="1231,2109,1442,2214" shape="rect">
+          <area alt="MacGuffin & Co" title="MacGuffin & Co" href="https://www.kickstarter.com/profile/macguffinandco/created" coords="2545,1796,2621,1905" shape="rect">
+          <area alt="IELLO" title="IELLO" href="https://www.kickstarter.com/profile/iello/created" coords="2399,2052,2621,2214" shape="rect">
+          <area alt="Shirts And Merch" title="Shirts And Merch" href="https://www.kickstarter.com/profile/shirtsandmerch/created" coords="3080,1657,3129,1736" shape="rect">
+          <area alt="Wrenegade Studios" title="Wrenegade Studios" href="https://www.kickstarter.com/profile/wrenegadestudios/created" coords="3137,1653,3186,1732" shape="rect">
+          <area alt="Exit 23 Games" title="Exit 23 Games" href="https://www.kickstarter.com/profile/exit23games/created" coords="3080,1740,3186,1845" shape="rect">
+          <area alt="Sophiralou" title="Sophiralou" href="https://www.kickstarter.com/profile/sophiralou/created" coords="3291,1683,3344,1766" shape="rect">
+          <area alt="TableTop Tech" title="TableTop Tech" href="https://www.kickstarter.com/profile/stevenmitchell/created?" coords="3295,2135,3340,2214" shape="rect">
+          <area alt="Cozy Juicy Real" title="Cozy Juicy Real" href="https://www.kickstarter.com/profile/cozy-juicy-real/created" coords="1017,2335,1062,2414" shape="rect">
+          <area alt="Chess-a-Tete" title="Chess-a-Tete" href="https://www.kickstarter.com/profile/chess-a-tete/created" coords="1073,3069,1122,3152" shape="rect">
+          <area alt="Blue Fox Games" title="Blue Fox Games" href="https://www.kickstarter.com/profile/bluefoxgames/created" coords="1069,3159,1122,3235" shape="rect">
+          <area alt="Earth Former Games" title="Earth Former Games" href="https://www.kickstarter.com/profile/earthformergames/created" coords="791,2579,892,2628" shape="rect">
+          <area alt="Escape Studios" title="Escape Studios" href="https://www.kickstarter.com/profile/escape/created" coords="23,2640,98,2768" shape="rect">
+          <area alt="Mantic Games" title="Mantic Games" href="https://www.kickstarter.com/profile/manticgames/created" coords="1683,3355,1958,3408" shape="rect">
+          <area alt="Allplay" title="Allplay" href="https://www.kickstarter.com/profile/boardgametables/created" coords="2402,2726,2621,3148" shape="rect">
+          <area alt="Sinister Fish Games" title="Sinister Fish Games" href="https://www.kickstarter.com/profile/sinisterfish/created" coords="2715,2421,2847,2587" shape="rect">
+          <area alt="Stone Sword Games" title="Stone Sword Games" href="https://www.kickstarter.com/profile/stoneswordgames/created" coords="2715,2591,2986,2722" shape="rect">
+          <area alt="Paper Fort Games" title="Paper Fort Games" href="https://www.kickstarter.com/profile/paperfortgames/created" coords="2719,2734,2990,2866" shape="rect">
+          <area alt="Dranda Games" title="Dranda Games" href="https://www.kickstarter.com/profile/drandagames/created" coords="2715,3073,2990,3148" shape="rect">
+          <area alt="Montford Tales" title="Montford Tales" href="https://www.kickstarter.com/profile/montfordtales/created" coords="3076,2474,3133,2557" shape="rect">
+          <area alt="RuneFable" title="RuneFable" href="https://www.kickstarter.com/profile/runefable/created" coords="3137,2899,3186,2982" shape="rect">
+          <area alt="Card Noir" title="Card Noir" href="https://www.kickstarter.com/profile/cardnoir/created" coords="3295,2451,3340,2553" shape="rect">
+          <area alt="Terratop Workshop" title="Terratop Workshop" href="https://www.kickstarter.com/profile/terratop/created" coords="3295,2647,3336,2722" shape="rect">
+          <area alt="Valkyrie RPG" title="Valkyrie RPG" href="https://www.kickstarter.com/profile/valkyrie-rpg/created" coords="3295,2734,3340,2839" shape="rect">
+          <area alt="Dissent Games" title="Dissent Games" href="https://www.kickstarter.com/profile/dissentgames/created" coords="3295,2930,3340,3009" shape="rect">
+          <area alt="Clockwork Arcana" title="Clockwork Arcana" href="https://www.kickstarter.com/profile/clockworkarcana/created" coords="3291,3016,3344,3144" shape="rect">
+          
+					<area alt="Nekomado" title="Nekomado" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1305,326,1372,394" shape="rect">
+					
+					
+					
+				</map>
+			</div>
+			</p>
+
+</html>
